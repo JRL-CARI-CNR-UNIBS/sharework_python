@@ -5,7 +5,7 @@ import pinocchio as pin
 def loadSharework(joints):
 
 
-    root = os.path.abspath("sharework")
+    root = os.path.dirname(os.path.realpath(__file__))
     urdf = os.path.join(root, "sharework.urdf")
 
     full_model_wrapper = RobotWrapper.BuildFromURDF(

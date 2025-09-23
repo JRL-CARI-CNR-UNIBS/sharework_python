@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sharework_python"          # distribution name on PyPI (can keep this)
+version = "0.1.0"                  # update as you release
+description = "Sharework cell loader utilities"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "BSD-3-Clause" }   # adjust if different
+authors = [{ name = "JRL-CARI-CNR-UNIBS" }]
+keywords = ["robotics", "urdf", "sharework"]
+
+# Add runtime deps if any, e.g.:
+# dependencies = ["numpy", "pyyaml"]
+
+[project.urls]
+Homepage = "https://github.com/JRL-CARI-CNR-UNIBS/sharework_python"
+Source = "https://github.com/JRL-CARI-CNR-UNIBS/sharework_python"
+Issues = "https://github.com/JRL-CARI-CNR-UNIBS/sharework_python/issues"
+
+[tool.setuptools]
+include-package-data = true
+
+# The package is the repo root (because __init__.py is at top level)
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sharework_python*"]    # the top-level dir name is the package name
+
+# Include non-Python files inside the wheel
+[tool.setuptools.package-data]
+sharework_python = [
+  "sharework.urdf",
+  "assets/**"
+]
+

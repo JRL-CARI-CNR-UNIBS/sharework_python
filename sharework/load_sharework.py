@@ -46,7 +46,6 @@ def loadSharework(joints):
 
     model_wrapper = full_model_wrapper
 
-    print(f"qui!!")
 
     model_wrapper.model = model
     model_wrapper.visual_model = visual_model
